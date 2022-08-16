@@ -15,9 +15,13 @@ Executes a callback immediately after a component is mounted.
 
 ```jsx
 const useComponentDidMount = onMountHandler => {
-  React.useEffect(() => {
-    onMountHandler();
-  }, []);
+  React.useEffect(
+    () => {
+      onMountHandler();
+    }, 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 };
 ```
 
